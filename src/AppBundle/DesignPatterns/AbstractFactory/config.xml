@@ -1,0 +1,5 @@
+<objects>
+    <class name="AppointmentMarker">
+        <arg num="0" instance="BloggsAppointEncoder"/>
+    </class>
+</objects>
