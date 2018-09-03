@@ -41,7 +41,33 @@ class PrimeNumber
                 $counter++;
             }
         }
+
+        for ($i = 0; $i < count($tabPrimeNumber); $i++) {
+            echo $tabPrimeNumber[$i];
+        }
         return $tabPrimeNumber;
     }
+
+    function isPalindrome(int $productOfMultipleTwoPrimeNumbers): bool
+    {
+        $palindrome = $productOfMultipleTwoPrimeNumbers;
+        $revers = 0;
+
+        while ($palindrome != 0) {
+            $remainder = (float)$palindrome % 10;
+            if ($remainder != 0) {
+                $revers = (int)$revers * 10 + $remainder;
+            }
+            $palindrome = (int)$palindrome / 10;
+        }
+        if ($revers == $productOfMultipleTwoPrimeNumbers) {
+            return true;
+        }
+        return false;
+    }
 }
+
+$primeNumber = new PrimeNumber();
+//$primeNumber->generatePrimeNumber(30);
+$primeNumber->isPalindrome(121);
 
