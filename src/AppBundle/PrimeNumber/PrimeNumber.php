@@ -54,11 +54,9 @@ class PrimeNumber
         $revers = 0;
 
         while ($palindrome != 0) {
-            $remainder = (float)$palindrome % 10;
-            if ($remainder != 0) {
-                $revers = (int)$revers * 10 + $remainder;
-            }
-            $palindrome = (int)$palindrome / 10;
+            $remainder = (int)($palindrome % 10);
+            $revers = (int)(($revers * 10) + $remainder);
+            $palindrome = (int)($palindrome / 10);
         }
         if ($revers == $productOfMultipleTwoPrimeNumbers) {
             return true;
@@ -69,5 +67,5 @@ class PrimeNumber
 
 $primeNumber = new PrimeNumber();
 //$primeNumber->generatePrimeNumber(30);
-$primeNumber->isPalindrome(121);
+$primeNumber->isPalindrome(252);
 
