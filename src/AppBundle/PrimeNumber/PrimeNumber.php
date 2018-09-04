@@ -65,7 +65,4 @@ class PrimeNumber
     }
 }
 
-$primeNumber = new PrimeNumber();
-//$primeNumber->generatePrimeNumber(30);
-$primeNumber->isPalindrome(252);
 
