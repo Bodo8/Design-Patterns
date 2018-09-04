@@ -11,8 +11,12 @@ namespace AppBundle\PrimeNumber;
 
 class PrimeNumber
 {
-    function generatePrimeNumber(int $maxPrimeNumber): array
+    function generatePrimeNumber(int $minPrimeNumber, int $maxPrimeNumber): array
     {
+        if ($minPrimeNumber < 0 || $maxPrimeNumber < 0) {
+            throw new \Exception('range must will be greater than 0');
+        }
+
         $tabWithNumber = [];
 
         for ($i = 0; $i < $maxPrimeNumber; $i++) {
@@ -36,14 +40,10 @@ class PrimeNumber
         $counter = 0;
 
         for ($i = 0; $i < $maxPrimeNumber; $i++) {
-            if ($tabWithNumber[$i] > 2) {
+            if ($tabWithNumber[$i] > 2 && $tabWithNumber[$i] > $minPrimeNumber) {
                 $tabPrimeNumber[$counter] = $tabWithNumber[$i];
                 $counter++;
             }
-        }
-
-        for ($i = 0; $i < count($tabPrimeNumber); $i++) {
-            echo $tabPrimeNumber[$i];
         }
         return $tabPrimeNumber;
     }
