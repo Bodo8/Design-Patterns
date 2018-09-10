@@ -40,7 +40,7 @@ class PrimeNumber
         $counter = 0;
 
         for ($i = 0; $i < $maxPrimeNumber; $i++) {
-            if ($tabWithNumber[$i] > 2 && $tabWithNumber[$i] > $minPrimeNumber) {
+            if ($tabWithNumber[$i] > 1 && $tabWithNumber[$i] > $minPrimeNumber) {
                 $tabPrimeNumber[$counter] = $tabWithNumber[$i];
                 $counter++;
             }
