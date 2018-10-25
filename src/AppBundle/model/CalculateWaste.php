@@ -117,6 +117,7 @@ class CalculateWaste
         print_r($aAllHighTabBool);
         $this->setAreaWaste(CalculateWaste::AEA_ONE_SHEET - $areaOfUsedWalls);
         print  $this->getAreaWaste() . ", ";
+        echo array_sum($aAllHighTab);
     }
 
     public function getTabWithBoxes(): array
@@ -124,13 +125,12 @@ class CalculateWaste
         return $this->tabWithBoxes;
     }
 
-
     public function getAreaWaste(): int
     {
         return $this->areaWaste;
     }
 
-    public function setAreaWaste(int $areaWaste): void
+    private function setAreaWaste(int $areaWaste): void
     {
         $this->areaWaste = $areaWaste;
     }
